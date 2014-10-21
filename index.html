@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8" />
+		<title>Demo</title>
+				<!--Javascript-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" />
+		
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+<!--CSS-->
+		<link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.3/jquery.mobile.external-png-1.4.3.min.css">
+		<link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.3/jquery.mobile.structure-1.4.3.min.css">
+		<link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.3/jquery.mobile-1.4.3.css">
+		<link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.3/jquery.mobile.theme-1.4.3.min.css">
+		<link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.3/jquery.mobile.icons-1.4.3.min.css">
+
+<script src="custgooglemaps.js"></script>
+
+<link rel="stylesheet" href="googlemaps.css" type="text/css"  />
+	</head>
+
+<body> 
+<div data-url="panel-responsive-page1" data-role="page" class="jqm-demos ui-responsive-panel" id="panel-responsive-page1" data-title="Panel responsive page">
+    
+    <!--header top of page-->
+    <div data-role="header">
+        <h1>Trip Planner</h1>
+        <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+    </div><!-- /header -->
+    
+    
+    <!--Text below-->
+    <div role="main" class="ui-content jqm-content jqm-fullwidth">
+        <h1>Trip Planner(Time + Gasoline)</h1>
+        <p>This is a typical page that has two buttons in the header bar that open panels. The left panel has the push display mode, the right panel reveal. To make this responsive, you can make the page re-flow at wider widths. This allows both the panel menu and page to be used together when more space is available. This behavior is controlled by CSS media queries. You can create a custom one for a specific breakpoint or use the breakpoint preset by adding the <code>class="ui-responsive-panel"</code> to the page container. We have added this class on this demo page. Note that when using the preset class, we also hide the dismiss layer on wider screens if the panel has the push display mode.</p>
+        <div data-demo-html="#panel-responsive-page1"></div><!--/demo-html -->
+       
+        <br>
+        <a href="../index.html" data-rel="back" data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-mini ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-alt-icon ui-nodisc-icon">Back</a>
+    
+    
+    <section id="wrap">
+    <!--Map and input for distances-->
+    <div id="mapdistance">
+   	  <div id="map"></div> 
+  	  <div id="duration">Duration: </div> 
+  	  <div id="distance">Distance: </div> 
+ 	  <input id="start" placeholder="city of departure" onkeypress="getPlace()">
+	  <input id="end" placeholder="city of arrival" onkeypress="getPlace()"><br>
+ 	  <button onclick="calcRoute(); ">calcular</button>
+  	</div>
+  	
+    <!--Gasoline calculator-->
+    <div id="gascalculator">
+  	<div id="gasoline"><div>
+  	<input type="radio" name="distance" value="Kms">Kms
+ 	<input type="radio" name="distance" value="Miles">Miles
+ 	<input id="kpl" placeholder="Km per Litre">
+ 	<input id="mpg" placeholder="Miles per Litre">
+ 	<input id="gasprice" placeholder="Gas Price">
+ 	<input id="otherprice" placeholder="Gas Price">
+	<div id="gasresults"></div> 
+  	<button onclick="">calcular</button>
+    </div> 
+    </section>
+    
+    
+    </div><!-- /content -->
+    
+    
+    
+    <!--Left menu-->
+    <div data-role="panel" data-display="overlay" data-theme="b" id="nav-panel">
+        <ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>          
+        <ul data-role="listview">
+            <li><a href="#panel-responsive-page2">Accordion</a></li>
+            <li><a href="#panel-responsive-page2">Accordion</a></li>
+           <li><a href="#panel-responsive-page2">Accordion</a></li>
+            <li><a href="#panel-responsive-page2">Accordion</a></li>
+           
+          
+        </ul>
+        </ul>
+    </div><!-- /panel -->
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
